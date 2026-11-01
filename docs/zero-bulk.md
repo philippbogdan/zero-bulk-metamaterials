@@ -6,18 +6,22 @@ A free wall removes one strain-energy mode while the rest of its base remains st
 
 For a base material M, let `lam_n` denote exact lamination with normal n. The rank-two wall is
 
-$$P_p=\operatorname{lam}_p(M,0;1/2,1/2),\qquad
-A(n,p)=\operatorname{lam}_n(M,P_p;1/2,1/2).$$
+```math
+P_p=\mathrm{lam}_p(M,0;1/2,1/2),\qquad
+A(n,p)=\mathrm{lam}_n(M,P_p;1/2,1/2).
+```
 
-For nonparallel n and p, its kernel is spanned by $s=\operatorname{sym}(n\otimes p)$. To see this, zero energy in a laminate requires zero energy in each phase. The positive-definite M phase must have zero strain; the plate stack permits strains in $\operatorname{sym}(p\otimes\mathbb R^3)$. Compatibility across the outer wall also restricts that strain to $\operatorname{sym}(n\otimes\mathbb R^3)$. For nonparallel n and p, their intersection is the line spanned by s. The averages of these compatible fields give the wall mode.
+For nonparallel n and p, its kernel is spanned by $`s=\mathrm{sym}(n\otimes p)`$. To see this, zero energy in a laminate requires zero energy in each phase. The positive-definite M phase must have zero strain; the plate stack permits strains in $`\mathrm{sym}(p\otimes\mathbb R^3)`$. Compatibility across the outer wall also restricts that strain to $`\mathrm{sym}(n\otimes\mathbb R^3)`$. For nonparallel n and p, their intersection is the line spanned by s. The averages of these compatible fields give the wall mode.
 
-When p is parallel to n, use two oppositely tilted rank-two walls, laminated along a tangent t. With $q_\pm=(n\pm t)/\sqrt2$, the modes $s_\pm=\operatorname{sym}(n\otimes q_\pm)$ have a sum proportional to $n\otimes n$ and a difference in $\operatorname{sym}(t\otimes\mathbb R^3)$. Thus the rank-three herringbone wall admits free normal opening. The simpler module family uses this construction. The headline designs use nonparallel n and p, so their walls are rank two.
+When p is parallel to n, use two oppositely tilted rank-two walls, laminated along a tangent t. With $`q_\pm=(n\pm t)/\sqrt2`$, the modes $`s_\pm=\mathrm{sym}(n\otimes q_\pm)`$ have a sum proportional to $`n\otimes n`$ and a difference in $`\mathrm{sym}(t\otimes\mathbb R^3)`$. Thus the rank-three herringbone wall admits free normal opening. The simpler module family uses this construction. The headline designs use nonparallel n and p, so their walls are rank two.
 
 Insert a wall at fraction eps into its leaf base, along normal n. In the free-wall, vanishing-eps limit, the effective tensor is
 
-$$X=M-\frac{(Ms)(Ms)^T}{s^TMs}.$$
+```math
+X=M-\frac{(Ms)(Ms)^T}{s^TMs}.
+```
 
-It is positive semidefinite and $Xs=0$. A partly compliant wall retains a fraction eta of this mode by multiplying the subtracted term by $(1-\eta)$; the explicit finite-eps geometry adds a small material bridge, fitted by the evaluator. All headline leaves have eta=0.
+It is positive semidefinite and $Xs=0$. A partly compliant wall retains a fraction eta of this mode by multiplying the subtracted term by $`(1-\eta)`$; the explicit finite-eps geometry adds a small material bridge, fitted by the evaluator. All headline leaves have eta=0.
 
 Each headline has a depth-five binary laminate tree, hence 32 leaves. A path contains five tree laminations, one wall insertion and two wall laminations, above the base's sequential layering. These eight levels require infinite separation in the homogenisation model. No finite spacing is claimed to realise the headline stiffness.
 
@@ -25,19 +29,25 @@ The headline evaluations use wall fraction eps=1e-14. This small value matters: 
 
 ## The zero-mode condition
 
-Assign each leaf the strain $E_i=\alpha_i s_i$. At a branch with normal m and fraction f, combine the children as
+Assign each leaf the strain $`E_i=\alpha_i s_i`$. At a branch with normal m and fraction f, combine the children as
 
-$$E=fE_L+(1-f)E_R.$$
+```math
+E=fE_L+(1-f)E_R.
+```
 
 A piecewise constant strain is compatible across the flat interface precisely when
 
-$$E_L-E_R\in\operatorname{sym}(m\otimes\mathbb R^3).$$
+```math
+E_L-E_R\in\mathrm{sym}(m\otimes\mathbb R^3).
+```
 
-Let $P_m^\perp$ be the orthogonal projection onto the complement of that subspace. The complete system is
+Let $`P_m^\perp`$ be the orthogonal projection onto the complement of that subspace. The complete system is
 
-$$P_m^\perp(E_L-E_R)=0\quad\text{at every branch},\qquad E_{\rm root}=I.$$
+```math
+P_m^\perp(E_L-E_R)=0\quad\text{at every branch},\qquad E_{\rm root}=I.
+```
 
-For fixed geometry this is linear in the leaf amplitudes. Each leaf strain has zero energy. Inductively, every compatible laminate of its children has zero energy at the mean strain. If the root strain is I, the homogenised dilation energy is zero. Positive semidefiniteness then implies $C^*I=0$ and $\kappa^*=0$.
+For fixed geometry this is linear in the leaf amplitudes. Each leaf strain has zero energy. Inductively, every compatible laminate of its children has zero energy at the mean strain. If the root strain is I, the homogenised dilation energy is zero. Positive semidefiniteness then implies $`C^*I=0`$ and $`\kappa^*=0`$.
 
 ```text
 leaf free strains

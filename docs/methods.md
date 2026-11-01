@@ -2,48 +2,60 @@
 
 The solid has Young's modulus E=1 and Poisson ratio nu_s. Its bulk and shear moduli are
 
-$$\kappa_s=\frac{1}{3(1-2\nu_s)},\qquad \mu_s=\frac{1}{2(1+\nu_s)}.$$
+```math
+\kappa_s=\frac{1}{3(1-2\nu_s)},\qquad \mu_s=\frac{1}{2(1+\nu_s)}.
+```
 
 An effective elasticity tensor is stored as a symmetric matrix in Mandel order
 `(11,22,33,sqrt(2)23,sqrt(2)13,sqrt(2)12)`. Let
-$v=(1,1,1,0,0,0)^T/\sqrt3$, $P_h=vv^T$ and $P_s=I_6-P_h$. Then
+$`v=(1,1,1,0,0,0)^T/\sqrt3`$, $`P_h=vv^T`$ and $`P_s=I_6-P_h`$. Then
 
-$$\kappa^*=\frac{v^TC^*v}{3},\quad
-\mu^*=\frac{\operatorname{tr}C^*-v^TC^*v}{10},\quad
-C_{\rm iso}=3\kappa^*P_h+2\mu^*P_s.$$
+```math
+\kappa^*=\frac{v^TC^*v}{3},\quad
+\mu^*=\frac{\mathrm{tr}C^*-v^TC^*v}{10},\quad
+C_{\rm iso}=3\kappa^*P_h+2\mu^*P_s.
+```
 
-The isotropy defect is $\|C^*-C_{\rm iso}\|_F/\|C^*\|_F$. The accepted threshold is 0.001. The reported moduli are those of the isotropic projection even when the defect is small but nonzero.
+The isotropy defect is $`\|C^*-C_{\rm iso}\|_F/\|C^*\|_F`$. The accepted threshold is 0.001. The reported moduli are those of the isotropic projection even when the defect is small but nonzero.
 
 ## Normalisation
 
 For total solid fraction theta and void, write
 
-$$z_\kappa=\frac{4\mu_s}{3},\qquad
-z_\mu=\frac{\mu_s(9\kappa_s+8\mu_s)}{6(\kappa_s+2\mu_s)}.$$
+```math
+z_\kappa=\frac{4\mu_s}{3},\qquad
+z_\mu=\frac{\mu_s(9\kappa_s+8\mu_s)}{6(\kappa_s+2\mu_s)}.
+```
 
 The Hashin-Shtrikman bounds are
 
-$$\kappa_{\rm HS}=\frac{\theta\kappa_s z_\kappa}{z_\kappa+(1-\theta)\kappa_s},\qquad
-\mu_{\rm HS}=\frac{\theta\mu_s z_\mu}{z_\mu+(1-\theta)\mu_s}.$$
+```math
+\kappa_{\rm HS}=\frac{\theta\kappa_s z_\kappa}{z_\kappa+(1-\theta)\kappa_s},\qquad
+\mu_{\rm HS}=\frac{\theta\mu_s z_\mu}{z_\mu+(1-\theta)\mu_s}.
+```
 
-All map coordinates are dimensionless: $x=\kappa^*/\kappa_{\rm HS}$ and $y=\mu^*/\mu_{\rm HS}$. This normalisation compares materials with the same solid fraction and base solid. The bounds apply to the isotropic projection, not to each directional stiffness separately.
+All map coordinates are dimensionless: $`x=\kappa^*/\kappa_{\rm HS}`$ and $`y=\mu^*/\mu_{\rm HS}`$. This normalisation compares materials with the same solid fraction and base solid. The bounds apply to the isotropic projection, not to each directional stiffness separately.
 
 ## Exact laminate formula
 
-Rotate the layer normal to e3. Split the Mandel indices into in-plane strain components $P=(11,22,12)$ and traction components $N=(33,23,13)$. For nonsingular $C_{NN}$,
+Rotate the layer normal to e3. Split the Mandel indices into in-plane strain components $P=(11,22,12)$ and traction components $N=(33,23,13)$. For nonsingular $`C_{NN}`$,
 
-$$H(C)=\begin{pmatrix}
+```math
+H(C)=\begin{pmatrix}
 C_{PP}-C_{PN}C_{NN}^{-1}C_{NP}&C_{PN}C_{NN}^{-1}\\
 -C_{NN}^{-1}C_{NP}&C_{NN}^{-1}
-\end{pmatrix}.$$
+\end{pmatrix}.
+```
 
-Continuity of in-plane strain and traction gives $H(C^*)=\sum_i f_iH(C_i)$. Invert the partial transform and rotate back. This is an exact homogenisation formula for separated layers. Void and singular wall tensors are regularised by adding delta times the Mandel identity at each lamination call.
+Continuity of in-plane strain and traction gives $`H(C^*)=\sum_i f_iH(C_i)`$. Invert the partial transform and rotate back. This is an exact homogenisation formula for separated layers. Void and singular wall tensors are regularised by adding delta times the Mandel identity at each lamination call.
 
 The base with void core and solid coating is
 
-$$C_B=C_s+(1-\theta_B)\left(\theta_B\sum_jw_j\Gamma_s(n_j)-C_s^{-1}\right)^{-1},$$
+```math
+C_B=C_s+(1-\theta_B)\left(\theta_B\sum_jw_j\Gamma_s(n_j)-C_s^{-1}\right)^{-1},
+```
 
-where $\Gamma_s(n)$ is defined in the [bound proof](bounds.md). Equal weights on the six icosahedral axes give the isotropic HS point. The headline bases use different nonnegative weights in each leaf on the fixed set of six icosahedral, three cubic and four octahedral axes.
+where $`\Gamma_s(n)`$ is defined in the [bound proof](bounds.md). Equal weights on the six icosahedral axes give the isotropic HS point. The headline bases use different nonnegative weights in each leaf on the fixed set of six icosahedral, three cubic and four octahedral axes.
 
 ## Precision and the meaning of certification
 
@@ -63,12 +75,14 @@ The outer square is a proved bound. Neither its interior nor the convex hull of 
 
 ## The corner gap
 
-For $u_\phi=(\cos\phi,\sin\phi)$,
+For $`u_\phi=(\cos\phi,\sin\phi)`$,
 
-$$h_{\rm att}(\phi)=\max_{p\in\mathcal P}u_\phi\cdot p,\qquad
-h_{\rm box}(\phi)=\max(0,\cos\phi)+\max(0,\sin\phi).$$
+```math
+h_{\rm att}(\phi)=\max_{p\in\mathcal P}u_\phi\cdot p,\qquad
+h_{\rm box}(\phi)=\max(0,\cos\phi)+\max(0,\sin\phi).
+```
 
-The reported corner gap is the maximum of $h_{\rm box}-h_{\rm att}$ over integer angles from 91 to 179 degrees. It is a sampled support-function comparison, not a continuous-angle Hausdorff distance, a volume fraction or a theorem that all convex combinations are realised by isotropic composites.
+The reported corner gap is the maximum of $`h_{\rm box}-h_{\rm att}`$ over integer angles from 91 to 179 degrees. It is a sampled support-function comparison, not a continuous-angle Hausdorff distance, a volume fraction or a theorem that all convex combinations are realised by isotropic composites.
 
 For each design, the finest stored eps is selected. Across deltas at that eps, the checker uses the largest x, smallest y and largest defect. Since cos(phi) is negative and sin(phi) positive here, this is conservative for support. The resulting pair is a conservative numerical estimate, not a newly evaluated tensor. All stored records remain available, including the rejected one.
 

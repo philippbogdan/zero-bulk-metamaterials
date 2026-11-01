@@ -22,7 +22,9 @@ Deep blue and copper distinguish opposite plate orientations of one solid; the s
 
 For A, compute `lam_e3(solid, FEM(P+); 1/2,1/2)`. For H, compute `lam_e1(FEM(A+), FEM(A-); 1/2,1/2)`. The relative error is
 
-$$\frac{\|C_{\rm FEM}-C_{\rm formula}\|_F}{\|C_{\rm formula}\|_F}.$$
+```math
+\frac{\|C_{\rm FEM}-C_{\rm formula}\|_F}{\|C_{\rm formula}\|_F}.
+```
 
 The stored A+ tensors suffice to reconstruct A-: reflection of x1, followed by a periodic translation by P/2-1 voxels, maps the plus mask to the minus mask. The A layer mask does not change. Therefore reflect the elasticity tensor with `diag(-1,1,1)`; translations leave the homogenised tensor unchanged. This is how the lightweight checker obtains the preceding-level minus tensor. Its resulting H comparison tensors agree with the separately stored formulas to round-off. The full FEM command recomputes both signs directly.
 
