@@ -1,6 +1,6 @@
 # Zero bulk, strong shear
 
-**These idealised solid-and-void designs retain 87 to 92% of the Hashin-Shtrikman upper bound on shear stiffness at zero bulk modulus.** They can change volume freely while remaining stiff against changes of shape, approaching an open corner of the material stiffness map.
+An architected material uses a designed arrangement of one solid and empty space to control how it deforms. Bulk stiffness, or bulk modulus, measures resistance to being squeezed equally from all sides; shear stiffness measures resistance to being sheared out of shape. At a given solid fraction (the share of volume occupied by solid), the Hashin-Shtrikman bounds cap both stiffnesses: no arrangement of that solid can beat them. How closely a material can combine almost no bulk stiffness with near-maximal shear stiffness remains open because the separate bounds do not establish which combinations are possible ([Milton, Problems 8 to 10 and 14](docs/references.md)). This work constructs layered designs at solid fractions from 0.01 to 0.7. **These idealised solid-and-void designs retain 87 to 92% of the Hashin-Shtrikman upper bound on shear stiffness at zero bulk modulus.**
 
 [![A cutaway of a simulated herringbone wall beside an exact close crop, with blue and copper identifying opposite plate orientations.](figures/wall.gif)](figures/wall.mp4)
 
