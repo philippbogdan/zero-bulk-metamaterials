@@ -1,0 +1,12 @@
+file,level,P,p2,p3,N,ratio,relative_error
+q2_finite_herringbone_A.json,A,8,16,,32,2.0,0.06296122788563942
+q2_finite_herringbone_A.json,A,8,32,,32,4.0,0.02621012409174358
+q2_finite_herringbone_A.json,A,8,64,,64,8.0,0.012772969430931687
+q2_finite_herringbone_H.json,H,8,16,64,256,4.0,0.0777898168189771
+q2_finite_herringbone_H.json,H,8,16,128,256,8.0,0.03848084657685752
+q2_finite_herringbone_H.json,H,8,16,256,256,16.0,0.019140675911521333
+q2_finite_herringbone_H.json,H,8,32,64,256,2.0,0.15045307847693562
+q2_finite_herringbone_H.json,H,8,32,128,256,4.0,0.07695477293940266
+q2_finite_herringbone_H.json,H,8,32,256,256,8.0,0.0387804069875043
+q2_finite_herringbone_H_N128.json,H,8,16,32,128,2.0,0.1549043056090027
+q2_finite_herringbone_H_N128.json,H,8,16,64,128,4.0,0.07778981681897704

@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+results/*.json
+!results/reproduction.json
+results/*.csv
+figures/tmp/
