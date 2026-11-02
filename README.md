@@ -26,12 +26,11 @@ Each headline structure combines 32 layered pieces, each with its own base geome
 
 Doubling the scale ratio roughly halves the error, reaching 1.9% for the herringbone wall at ratio 16. The filled circle and larger ring at ratio 4 show the same geometry at two resolutions; [the finite-scale evidence](docs/finite-scale.md) explains the comparison.
 
-## What this does not show
+## Assumptions made
 
-- Printable cells: the formulas assume infinite separation across eight lamination levels plus the base laminate.
-- Exact isotropy: the relative defect is at most 0.001, and zero bulk refers to the compatible geometry before rounding. [Numerical precision](docs/methods.md#precision-and-the-meaning-of-certification).
-- Full finite-scale validation: only individual wall steps were simulated, not the complete structures or their extremely thin walls.
-- A closed corner or an optimum: the gap is a sampled support comparison, and no stronger outer bound for general microstructures is proved.
+- The laminate formulas assume infinite separation across eight lamination levels plus the base laminate. [Geometry](docs/zero-bulk.md#the-geometry).
+- Reported stiffnesses use the isotropic projection, with relative isotropy defect at most 0.001; zero bulk refers to the compatible geometry before rounding. [Numerical precision](docs/methods.md#precision-and-the-meaning-of-certification).
+- The corner gap compares sampled support of the stored designs and baseline constructions with the [Hashin-Shtrikman outer square](docs/bounds.md). [Gap definition](docs/methods.md#the-corner-gap).
 
 ## How to use it
 
